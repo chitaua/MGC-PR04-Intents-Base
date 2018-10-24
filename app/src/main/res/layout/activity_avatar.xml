@@ -28,9 +28,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@android:color/darker_gray"
+        android:padding="5dp"
         android:text="TextView"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/imgAvatar2"
-        app:layout_constraintEnd_toStartOf="@+id/imgAvatar4" />
+        app:layout_constraintEnd_toStartOf="@+id/imgAvatar4"
+        tools:backgroundTintMode="screen" />
 
     <ImageView
         android:id="@+id/imgAvatar2"
@@ -50,9 +54,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@android:color/darker_gray"
+        android:padding="5dp"
         android:text="TextView"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/imgAvatar3"
-        app:layout_constraintEnd_toStartOf="@+id/imgAvatar5" />
+        app:layout_constraintEnd_toStartOf="@+id/imgAvatar5"
+        tools:backgroundTintMode="screen" />
 
     <ImageView
         android:id="@+id/imgAvatar3"
@@ -72,9 +80,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@android:color/darker_gray"
+        android:padding="5dp"
         android:text="TextView"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/imgAvatar3"
-        app:layout_constraintEnd_toStartOf="@+id/imgAvatar6" />
+        app:layout_constraintEnd_toStartOf="@+id/imgAvatar6"
+        tools:backgroundTintMode="screen" />
 
     <ImageView
         android:id="@+id/imgAvatar4"
@@ -94,9 +106,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@android:color/darker_gray"
+        android:padding="5dp"
         android:text="TextView"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/imgAvatar5"
-        app:layout_constraintEnd_toEndOf="@+id/imgAvatar4" />
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar4"
+        tools:backgroundTintMode="screen" />
 
     <ImageView
         android:id="@+id/imgAvatar5"
@@ -116,9 +132,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@android:color/darker_gray"
+        android:padding="5dp"
         android:text="TextView"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/imgAvatar6"
-        app:layout_constraintEnd_toEndOf="@+id/imgAvatar5" />
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar5"
+        tools:backgroundTintMode="screen" />
 
     <ImageView
         android:id="@+id/imgAvatar6"
@@ -138,9 +158,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@android:color/darker_gray"
+        android:padding="5dp"
         android:text="TextView"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:backgroundTintMode="screen" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

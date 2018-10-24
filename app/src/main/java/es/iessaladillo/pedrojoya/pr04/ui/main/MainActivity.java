@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
@@ -29,6 +30,9 @@ import es.iessaladillo.pedrojoya.pr04.utils.ValidationUtils;
 @SuppressWarnings("WeakerAccess")
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static final int RC_OTRA = 50;
+
+    private Avatar avatar;
     private Database database = Database.getInstance();
     private ImageView imgAvatar;
     private TextView lblAvatar;
@@ -54,7 +58,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         setupViews();
         initAvatar(database.getDefaultAvatar());
-        lblAvatar.setOnClickListener(v -> changeAvatar());
+        lblAvatar.setOnClickListener(v -> {
+            changeAvatar();
+        });
         imgAvatar.setOnClickListener(v -> changeAvatar());
         onFocus();
         addChangeListener();
@@ -120,8 +126,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void changeAvatar() {
         Intent intent = new Intent(MainActivity.this, AvatarActivity.class);
+        intent.putExtra(AvatarActivity.EXTRA_AVATAR, (Parcelable) avatar);
+        startActivityForResult(intent, RC_OTRA);
+    }
 
-        startActivity(intent);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK && requestCode == RC_OTRA) {
+            if (data != null && data.hasExtra(AvatarActivity.EXTRA_AVATAR)) {
+                avatar = data.getParcelableExtra(AvatarActivity.EXTRA_AVATAR);
+                initAvatar(avatar);
+            }
+        }
     }
 
     @Override

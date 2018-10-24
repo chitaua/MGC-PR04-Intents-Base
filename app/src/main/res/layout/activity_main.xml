@@ -26,11 +26,11 @@
         android:layout_marginBottom="16dp"
         android:background="@color/activity_avatar_label_background"
         android:labelFor="@+id/imgAvatar"
-        android:padding="5dp"
         android:textAlignment="center"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/imgAvatar"
         app:layout_constraintEnd_toEndOf="@+id/imgAvatar"
+        android:padding="5dp"
         tools:backgroundTintMode="screen" />
 
     <include
