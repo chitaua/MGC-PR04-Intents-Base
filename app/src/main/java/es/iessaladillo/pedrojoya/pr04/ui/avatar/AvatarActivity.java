@@ -2,11 +2,9 @@ package es.iessaladillo.pedrojoya.pr04.ui.avatar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.text.BreakIterator;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,6 +41,7 @@ public class AvatarActivity extends AppCompatActivity {
         getIntentData();
         setupViews();
         initImageViews();
+        // NO SE SELECCIONA EL AVATAR ACTUAL Y POR ESTO NO TE PASA UN TEST.
     }
 
     private void getIntentData() {

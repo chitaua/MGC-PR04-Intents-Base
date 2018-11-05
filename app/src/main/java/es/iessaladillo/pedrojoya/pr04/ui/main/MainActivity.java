@@ -139,11 +139,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    // POR QUÉ NO UTILIZAS LAMBDAS?
     @Override
     public void onClick(View v) {
         Intent intent;
         switch (v.getId()) {
             case R.id.imgEmail:
+                // DEBERÍAS COMPROBAR QUE HAY DATOS ANTES DE ENVIAR EL INTENT.
+                // HAZ UN MÉTODO PARA CADA RAMA DEL SWITCH.
                 intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse("mailto:" + txtEmail.getText().toString()));
                 try {
@@ -153,8 +156,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.imgPhonenumber:
+                // TE LO CAMBIO PARA QUE PASE EL TEST.
                 intent = new Intent(Intent.ACTION_DIAL,
-                        Uri.parse("tel:(+34)" + txtPhonenumber.getText().toString()));
+                        Uri.parse("tel:" + txtPhonenumber.getText().toString()));
                 try {
                     startActivity(intent);
                 } catch (ActivityNotFoundException e) {
@@ -162,8 +166,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.imgAddress:
+                // TE LO CAMBIO PARA QUE PASE EL TEST.
                 intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("geo:0,0?" + txtAddress.getText().toString()));
+                        Uri.parse("geo:0,0?q=" + txtAddress.getText().toString()));
                 try {
                     startActivity(intent);
                 } catch (ActivityNotFoundException e) {
@@ -226,6 +231,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void afterTextChanged(Editable s) {
+                // ESTE CÓDIGO SE REPITE PRÁCTICAMENTE IGUAL MÁS ABAJO. HAZ UN MÉTODO
+                // QUE RECIBA LOS PARÁMETROS ADECUADOS Y LLÁMALO DESDE VARIAS PARTES.
                 if (txtName.getText().toString().isEmpty()) {
                     txtName.setError(getString(R.string.main_invalid_data));
                     lblName.setEnabled(false);
@@ -351,6 +358,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private boolean checkAllFields() {
         boolean valid = true;
+        // REPITES CÓDIGO SIMILAR A ESTA MÁS ABAJO. HAZ UN MÉTODO Y ÚSALO VARIAS VECES.
         if (txtName.getText().toString().isEmpty()) {
             txtName.setError(getString(R.string.main_invalid_data));
             lblName.setEnabled(false);
